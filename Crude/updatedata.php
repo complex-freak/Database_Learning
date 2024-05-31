@@ -20,7 +20,6 @@ if(isset($_POST["name"]) && isset($_POST["grade"]) && isset($_POST["marks"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP - MYSQL - CRUD</title>
-    <!-- CSS only -->
     <link href="bootstrap-5.1.3-dist\css\bootstrap.min.css" rel="stylesheet">
 
 </head>
@@ -36,7 +35,7 @@ if(isset($_POST["name"]) && isset($_POST["grade"]) && isset($_POST["marks"])){
                     while ($row = $result -> fetch_assoc()) { 
                         $Id = $row['id'];
                         $Name = $row['name'];
-                        $Grade = $row['grade']; // Corrected the column name here
+                        $Grade = $row['grade'];
                         $Marks = $row['marks'];
             ?>
                             <form action="updatedata.php?id=<?php echo $Id; ?>" method="post">
@@ -71,7 +70,6 @@ if(isset($_POST["name"]) && isset($_POST["grade"]) && isset($_POST["marks"])){
             ?>
         </div>
     </section>
-     <!-- JavaScript Bundle with Popper -->
      <script src="dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

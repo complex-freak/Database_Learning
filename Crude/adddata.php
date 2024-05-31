@@ -1,5 +1,5 @@
 <?php
-require_once "conn.php"; // Make sure this file contains valid database connection details
+require_once "conn.php";
 
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -12,17 +12,16 @@ if (isset($_POST['submit'])) {
 
         // Check if the prepare() call was successful
         if ($stmt === false) {
-            echo "Prepare statement error: " . $conn->error; // Provide error message if prepare() fails
+            echo "Prepare statement error: " . $conn->error; 
         } else {
             
             $stmt->bind_param("ssi", $name, $grade, $marks);
 
-            // Execute the prepared statement
             if ($stmt->execute()) {
                 header("location: index.php");
-                exit; // Ensure no further code execution after redirection
+                exit; 
             } else {
-                echo "Database error: " . $stmt->error; // Provide error message if execution fails
+                echo "Database error: " . $stmt->error;
             }
         }
     } else {
